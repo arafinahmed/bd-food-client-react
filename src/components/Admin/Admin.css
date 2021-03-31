@@ -1,0 +1,8 @@
+.link-tag{
+    font-weight: bold;
+    padding: 10px;
+    color: blue;
+}
+.link-tag:hover{
+    cursor: pointer;
+}
