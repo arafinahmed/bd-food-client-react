@@ -1,0 +1,12 @@
+.product-info{
+    border: 1px solid black;
+    margin: 1em;
+    border-radius: 1em;
+    padding: 1em;
+}
+.product-info h6{
+    font-weight: bold;
+}
+.product-info img{
+    border-radius: 1em;
+}

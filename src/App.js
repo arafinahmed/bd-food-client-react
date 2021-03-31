@@ -11,6 +11,8 @@ import NotFound from './components/NotFound/NotFound';
 import LoginPage from './components/LoginPage/LoginPage';
 import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Home from './components/Home/Home';
+
 export const ContextApi = createContext();
 
 function App() {
@@ -20,13 +22,14 @@ function App() {
     <ContextApi.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         
-        <Head></Head>
-        
+        <Head></Head>        
         <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
           <Route path="/login">
             <LoginPage></LoginPage>
-          </Route>
-          
+          </Route>          
           <PrivateRoute path="/admin">
           <Admin></Admin>
           </PrivateRoute>
