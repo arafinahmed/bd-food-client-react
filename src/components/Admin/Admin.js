@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageProduct from '../ManageProduct/ManageProduct';
 import './Admin.css';
 const Admin = () => {
     const [manageProduct, setManageProduct] = useState(false);
@@ -30,6 +31,12 @@ const Admin = () => {
             </p>
             {
                 addProduct && <AddProduct></AddProduct>
+            }
+            {
+                manageProduct && <ManageProduct></ManageProduct>
+            }
+            {
+                editProduct && <ManageProduct></ManageProduct>
             }
         </div>
     );

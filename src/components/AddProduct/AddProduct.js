@@ -13,7 +13,7 @@ const AddProduct = () => {
             "weight": data.productWeight,
             "imageUrl": imageUrl
         }
-        const url = `http://localhost:8888/addProduct`;
+        const url = `https://sheltered-taiga-37927.herokuapp.com/addProduct`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -45,7 +45,7 @@ const AddProduct = () => {
 
     return (
         <div className="container">
-            <h2>Add Product</h2>
+            <h3>Add Product</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">
                     <div>
