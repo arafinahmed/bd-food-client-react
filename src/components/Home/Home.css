@@ -2,3 +2,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+@media only screen and (max-width: 992px) {
+    
+    .product-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+@media only screen and (max-width: 768px) {
+    
+    .product-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.spinner{
+    width: 100%;
+    height: 80vh;
+}

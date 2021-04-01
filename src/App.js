@@ -12,27 +12,32 @@ import LoginPage from './components/LoginPage/LoginPage';
 import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Home from './components/Home/Home';
+import Checkout from './components/Checkout/Checkout';
 
 export const ContextApi = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  
+
   return (
     <ContextApi.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        
-        <Head></Head>        
+
+        <Head></Head>
         <Switch>
           <Route exact path="/">
             <Home></Home>
           </Route>
           <Route path="/login">
             <LoginPage></LoginPage>
-          </Route>          
+          </Route>
           <PrivateRoute path="/admin">
-          <Admin></Admin>
+            <Admin></Admin>
           </PrivateRoute>
+          <Route path="/checkout">
+            <Checkout> </Checkout>
+          </Route>
+
           <Route exact path="*">
             <NotFound></NotFound>
           </Route>
