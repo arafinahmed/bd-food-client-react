@@ -13,6 +13,7 @@ import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Home from './components/Home/Home';
 import Checkout from './components/Checkout/Checkout';
+import Orders from './components/Orders/Orders';
 
 export const ContextApi = createContext();
 
@@ -34,10 +35,12 @@ function App() {
           <PrivateRoute path="/admin">
             <Admin></Admin>
           </PrivateRoute>
-          <Route path="/checkout">
+          <PrivateRoute path="/checkout/:id">
             <Checkout> </Checkout>
-          </Route>
-
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
+            <Orders></Orders>
+          </PrivateRoute>
           <Route exact path="*">
             <NotFound></NotFound>
           </Route>

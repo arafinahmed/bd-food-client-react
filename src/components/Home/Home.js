@@ -7,7 +7,10 @@ const Home = () => {
     useEffect(() => {
         fetch('http://localhost:8888/allProducts')
             .then(res => res.json())
-            .then(data => setProducts(data));
+            .then(data => {
+                data.reverse();
+                setProducts(data)
+            });
     }, [])
     console.log(products);
     return (
