@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 const Home = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://sheltered-taiga-37927.herokuapp.com/allProducts')
+        fetch('http://localhost:8888/allProducts')
             .then(res => res.json())
             .then(data => {
                 data.reverse();

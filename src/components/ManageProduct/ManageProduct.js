@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-
+import './ManageProduct.css';
 const useStyles = makeStyles({
     table: {
         minWidth: 200,
@@ -19,22 +19,28 @@ const useStyles = makeStyles({
 const ManageProduct = () => {
     const classes = useStyles();
     const [products, setProducts] = useState([]);
+    const [deleted, setDeleted] = useState(false);
     useEffect(() => {
-        fetch('https://sheltered-taiga-37927.herokuapp.com/allProducts')
+        fetch('http://localhost:8888/allProducts')
             .then(res => res.json())
             .then(data => {
                 data.reverse();
                 setProducts(data)
             });
-    }, []);
+    }, [deleted]);
     const rows = products;
     console.log(products);
     const deleteProduct = (id) => {
-        fetch(`https://sheltered-taiga-37927.herokuapp.com/deleteProduct/${id}`, {
+        fetch(`http://localhost:8888/deleteProduct/${id}`, {
             method: 'delete'
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data){
+                alert("Product is deleted successfully");
+                setDeleted(!deleted);
+            }
+        })
     }
     return (
         <div className="container">
@@ -57,7 +63,7 @@ const ManageProduct = () => {
                                             </TableCell>
                                             <TableCell align="right">{row.weight}</TableCell>
                                             <TableCell align="right">${row.price}</TableCell>
-                                            <TableCell align="right"><DeleteForeverIcon color="secondary" onClick={() => deleteProduct(row._id)}/></TableCell>
+                                            <TableCell align="right"><DeleteForeverIcon className="deleteIcon" color="secondary" onClick={() => deleteProduct(row._id)}/></TableCell>
 
                                         </TableRow>
                                     ))}

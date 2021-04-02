@@ -27,7 +27,7 @@ const Checkout = () => {
     const [product, setProduct] = useState({});
     const [successful, setSuccessful] = useState(false);
     useEffect(() => {
-        fetch(`https://sheltered-taiga-37927.herokuapp.com/product/${id}`)
+        fetch(`http://localhost:8888/product/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -41,7 +41,7 @@ const Checkout = () => {
             "productName": product.name,
             "price": product.price
         }
-        fetch("https://sheltered-taiga-37927.herokuapp.com/newOrder", {
+        fetch("http://localhost:8888/newOrder", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ const AddProduct = () => {
             "weight": data.productWeight,
             "imageUrl": imageUrl
         }
-        const url = `https://sheltered-taiga-37927.herokuapp.com/addProduct`;
+        const url = `http://localhost:8888/addProduct`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -25,6 +25,9 @@ const AddProduct = () => {
         .then(result => {
             console.log(result);
             setImageUrl('');
+            if(result){
+                alert("New Product added");
+            }
         })
     };
 
