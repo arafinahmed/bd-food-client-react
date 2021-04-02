@@ -21,7 +21,7 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([]);
     const [deleted, setDeleted] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:8888/allProducts')
+        fetch('https://sheltered-taiga-37927.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => {
                 data.reverse();
@@ -31,7 +31,7 @@ const ManageProduct = () => {
     const rows = products;
     console.log(products);
     const deleteProduct = (id) => {
-        fetch(`http://localhost:8888/deleteProduct/${id}`, {
+        fetch(`https://sheltered-taiga-37927.herokuapp.com/deleteProduct/${id}`, {
             method: 'delete'
         })
         .then(res => res.json())
