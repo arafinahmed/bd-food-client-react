@@ -1,5 +1,5 @@
 # full-stack-client-arafinahmed
-## This is an assignment project by Programming Hero Team. This is the client site of simple e-commerce website.
+
 ### This is an react project. We used `npx create-react-app bd-food` for creating this project. 
 ### The dependencies of this client site are: 
 #### `firebase` `axios` `bootstrap` `react-bootstrap` `react-hook-form` `react-router-dom` `material-ui` `font-awesome`
